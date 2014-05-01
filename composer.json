@@ -1,0 +1,15 @@
+{
+	"name"       : "cftp/iconic",
+	"description": "Replace WordPress menu items with a custom icon from the dashicon font.",
+	"type"       : "wordpress-plugin",
+	"license"    : "GPL-2.0+",
+	"authors"    : [
+		{
+			"name"    : "Code For The People",
+			"homepage": "http://codeforthepeople.com/"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}
