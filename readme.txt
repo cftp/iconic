@@ -1,4 +1,4 @@
-=== WP Instagram Widget ===
+=== Iconic ===
 Contributors: scottsweb, tjnowell, codeforthepeople
 Tags: icon, menu, icon font, font, custom, dashicon, social, media, share, buttons, badges
 Requires at least: 3.8
