@@ -1,5 +1,5 @@
 <?php
-/*	
+/*
 Plugin Name: Iconic
 Plugin URI: https://github.com/cftp/iconic
 Description: Replace WordPress menu items with a custom icon
@@ -46,7 +46,7 @@ GNU General Public License for more details.
  * iconic_dashicons
  *
  * Load the dashicons CSS on the front end
- * 
+ *
  * @return void
  */
 function iconic_dashicons() {
@@ -58,7 +58,7 @@ add_action( 'wp_enqueue_scripts', 'iconic_dashicons' );
  * iconic_css
  *
  * Add the .sr-only class to the head for screen reader text
- * 
+ *
  * @return void
  */
 function iconic_css() {
@@ -72,11 +72,12 @@ add_action( 'wp_head', 'iconic_css' );
  * iconic
  *
  * Register array of icons and new instance of Iconic_Menu_Select
- * 
+ *
  * @return void
  */
 function iconic() {
 	$icons = array(
+		'no-icon'		     							=> __('None', 'iconic'),
 		'menu-icon-dashicons-menu' 						=> __('Menu', 'iconic'),
 		'menu-icon-dashicons-dashboard' 				=> __('Dashboard', 'iconic'),
 		'menu-icon-dashicons-admin-site' 				=> __('Admin Site', 'iconic'),
@@ -329,15 +330,15 @@ class Iconic_Menu_Select {
 	 * replace_with_icon
 	 *
 	 * Replaces a menu item with a span icon
-	 * 
+	 *
 	 * @param  string $item_output
-	 * @param  object $item        
-	 * @param  int $depth 
+	 * @param  object $item
+	 * @param  int $depth
 	 * @param  array $args
 	 * @return string
 	 */
 	function replace_with_icon($item_output, $item, $depth, $args) {
-		
+
 		// does this item have a menu icon associated?
 		if (preg_grep ('/^menu-icon/i', $item->classes) ) {
 
@@ -346,7 +347,7 @@ class Iconic_Menu_Select {
 
 			// add the dashicon class when using dashicons
 			if ( strpos($class, 'dashicons' ) !== false ) $class .= ' dashicons';
-			
+
 			// find the anchor text
 			preg_match('#<a.*?>(.*)?<\/a>#', $item_output, $matches);
 
