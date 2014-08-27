@@ -43,6 +43,29 @@ GNU General Public License for more details.
 */
 
 /**
+ * iconic_horizontal_menu
+ *
+ * A widget with horizontal class - perfect for icon based menus
+ *
+ * @author Scott Evans
+ * @return void
+ */
+function iconic_horizontal_widget() {
+	if ( ! class_exists( 'WP_Horizontal_Nav_Menu_Widget' ) ) {
+
+		class WP_Horizontal_Nav_Menu_Widget extends WP_Nav_Menu_Widget {
+			public function __construct() {
+				$widget_ops = array( 'description' => __('Add a custom horizontal menu to your sidebar.', 'iconic') );
+				WP_Widget::__construct( 'horizontal_nav_menu', __('Custom Horizontal Menu', 'iconic'), $widget_ops );
+			}
+		}
+
+		register_widget( 'WP_Horizontal_Nav_Menu_Widget' );
+	}
+}
+add_action( 'widgets_init', 'iconic_horizontal_widget' );
+
+/**
  * iconic_dashicons
  *
  * Load the dashicons CSS on the front end
